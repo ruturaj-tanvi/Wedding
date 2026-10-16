@@ -335,6 +335,7 @@
     background:linear-gradient(135deg,var(--emerald) 0%,var(--emerald-deep) 100%);
     border:1px solid rgba(27,94,63,.2);
   }
+  .venue-photo.nophoto .credit{display:none;}
   .venue-photo img{
     width:100%;height:100%;object-fit:cover;display:block;
   }
@@ -409,6 +410,9 @@
   }
   .ev-body h3 .mr{font-family:var(--marathi);color:var(--emerald-soft);font-size:.82rem;margin-left:8px;}
   .ev-note{margin:4px 0 0;font-size:.92rem;color:var(--ink-soft);}
+  .ev-meaning{margin:8px 0 0;font-size:.88rem;line-height:1.5;color:var(--ink-soft);font-style:italic;padding-left:12px;border-left:2px solid var(--marigold);}
+  .ev-meaning span{display:block;font-style:normal;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--marigold);font-weight:700;margin-bottom:2px;}
+  .muhurt .ev-meaning{color:inherit;opacity:.92;margin-top:12px;}
 
   /* the muhurt highlight ------------------------------------------ */
   .muhurt{
@@ -443,7 +447,15 @@
   .muhurt-txt p{margin:8px 0 0;color:rgba(251,241,220,.9);max-width:46ch;font-size:.95rem;}
 
   /* good to know --------------------------------------------------- */
-  .knowgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:34px;}
+  .wear-lead{max-width:640px;margin:14px 0 0;color:var(--ink-soft);}
+  .wear-top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px;flex-wrap:wrap;}
+  .wear-when{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--kunku);font-weight:700;}
+  .wear-vibe{font-size:.72rem;padding:3px 10px;border-radius:999px;background:rgba(228,113,30,.12);color:var(--marigold);font-weight:700;}
+  .wear-card h3 .mr{font-family:var(--marathi);font-size:.8rem;color:var(--emerald-soft);margin-left:6px;}
+  .wear-notes{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:20px;}
+  .wear-help{border:1.5px dashed var(--marigold);}
+  @media (max-width:760px){.wear-notes{grid-template-columns:1fr;}}
+  .knowgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:34px;}
   .card{
     background:var(--paper);
     color:var(--ink);
@@ -823,24 +835,6 @@
     </div>
   </header>
 
-  <!-- USA WELCOME -->
-  <section aria-labelledby="usa-h">
-    <div class="wrap">
-      <div class="usa reveal">
-        <div>
-          <p class="eyebrow" style="color:var(--turmeric-lite)">Flying in from the States</p>
-          <h2 id="usa-h">You've come halfway across the world. Let us take it from here.</h2>
-          <p>Your stay for the wedding days is on us, so all you need to bring is yourself (and maybe your best Sangeet dance moves).</p>
-          <p>Once you know your dates, message Ruturaj or Tanvi below. We will sort out arrival, rooms, and rides together.</p>
-        </div>
-        <div class="stamp">
-          <div class="big">Stay<br>covered</div>
-          <div class="small">For our friends<br>from the USA</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- VENUE -->
 
   <section aria-labelledby="venue-h">
@@ -851,7 +845,7 @@
       <!-- Swap the src below for your own photo, e.g. src="venue.jpg" -->
       <div class="venue-photo reveal">
         <img src="https://lh3.googleusercontent.com/place-photos/AG9NLjBo35WzVSk_4HpXA69mrTYugOMIm-kA3OKCoBOsS3V6N--cJ8mEGtwOKhCAjaskoYQewMRcAvuzzA8Hbw8XSBigJqFiJE6rYnfE-kKSANqdn3nOlFnrndYz06NT5WBLx_Boqqk0VFEOb-1EZg=s4800-w1600-h900"
-             alt="Balaji Sarovar Premiere, Solapur" loading="lazy" />
+             alt="Balaji Sarovar Premiere, Solapur" loading="lazy" onerror="this.parentNode.classList.add('nophoto');this.remove();" />
         <div class="veil"></div>
         <div class="credit">Photo: Balaji Sarovar Premiere</div>
         <p class="cap">Two days, one roof. Everything happens right here.</p>
@@ -945,40 +939,22 @@
         </div>
 
         <div class="event reveal">
-          <div class="ev-time">11:00–11:30 AM</div>
-          <div class="ev-body"><h3>Arrival &amp; welcome <span class="mr">स्वागत</span></h3>
-          <p class="ev-note">Roll in, drop your bags, and get greeted the proper way.</p></div>
-        </div>
-        <div class="event reveal">
-          <div class="ev-time">12:00 PM</div>
-          <div class="ev-body"><h3>Lunch</h3></div>
-        </div>
-        <div class="event reveal">
-          <div class="ev-time">1:00 PM</div>
-          <div class="ev-body"><h3>Check-in begins</h3>
-          <p class="ev-note">We're requesting an early check-in, so rooms should be ready around now.</p></div>
+          <div class="ev-time">11:00 AM–1:00 PM</div>
+          <div class="ev-body"><h3>Engagement <span class="mr">साखरपुडा</span></h3>
+          <p class="ev-note">Rings, blessings from the elders, and the two families making it official.</p>
+          <p class="ev-meaning"><span>Meaning</span>Sakharpuda literally means "a packet of sugar": the two families exchange sweets, saris, and rings to formally seal the match.</p></div>
         </div>
         <div class="event reveal">
           <div class="ev-time">3:00–5:00 PM</div>
-          <div class="ev-body"><h3>Engagement <span class="mr">साखरपुडा</span></h3></div>
-        </div>
-        <div class="event reveal">
-          <div class="ev-time">5:30–7:00 PM</div>
           <div class="ev-body"><h3>Haldi <span class="mr">हळद</span></h3>
-          <p class="ev-note">Turmeric, laughter, and clothes you won't mind staining yellow.</p></div>
+          <p class="ev-note">Turmeric, laughter, and clothes you won't mind staining yellow.</p>
+          <p class="ev-meaning"><span>Meaning</span>Turmeric paste is applied to the couple to bless them with a natural glow and to purify and protect them before the wedding.</p></div>
         </div>
         <div class="event reveal">
-          <div class="ev-time">7:30–9:00 PM</div>
-          <div class="ev-body"><h3>Sangeet <span class="mr">संगीत</span></h3>
-          <p class="ev-note">Music, dance, and the reason we said bring your moves.</p></div>
-        </div>
-        <div class="event reveal">
-          <div class="ev-time">8:30 PM →</div>
-          <div class="ev-body"><h3>Dinner</h3></div>
-        </div>
-        <div class="event reveal">
-          <div class="ev-time">10:00 PM</div>
-          <div class="ev-body"><h3>Day winds down</h3></div>
+          <div class="ev-time">7:30 PM →</div>
+          <div class="ev-body"><h3>Reception <span class="mr">स्वागत समारंभ</span></h3>
+          <p class="ev-note">An evening with friends and family, followed by dinner.</p>
+          <p class="ev-meaning"><span>Meaning</span>The families welcome friends and the wider community to celebrate the couple and share in their joy.</p></div>
         </div>
       </div>
 
@@ -997,12 +973,14 @@
         <div class="event reveal">
           <div class="ev-time">8:00–11:00 AM</div>
           <div class="ev-body"><h3>Vidhi <span class="mr">विधी</span></h3>
-          <p class="ev-note">The morning rituals that lead up to the main moment.</p></div>
+          <p class="ev-note">The morning rituals that lead up to the main moment.</p>
+          <p class="ev-meaning"><span>Meaning</span>The priest leads prayers to Shri Ganesh and the family deities, and the bride worships Gauri Har (Parvati and Shiva) for a blessed married life.</p></div>
         </div>
         <div class="event reveal">
           <div class="ev-time">12:00 PM</div>
           <div class="ev-body"><h3>Akshata begins <span class="mr">अक्षता</span></h3>
-          <p class="ev-note">Grab your turmeric rice and find your spot.</p></div>
+          <p class="ev-note">Grab your turmeric rice and find your spot.</p>
+          <p class="ev-meaning"><span>Meaning</span>Akshata means "unbroken": these whole rice grains, tinted with turmeric and kumkum, stand for blessings that last forever.</p></div>
         </div>
 
         <!-- THE MOMENT -->
@@ -1013,6 +991,7 @@
             <div class="muhurt-txt">
               <h3>The Akshata Muhurt <span class="mr">अक्षता मुहूर्त</span></h3>
               <p>The exact minute. Shower the akshata, and just like that, Ruturaj and Tanvi are married. This is the one you traveled for.</p>
+              <p class="ev-meaning muh"><span>Meaning</span>As the priest sings the Mangalashtak, the antarpat cloth between the bride and groom is lowered at the auspicious minute, garlands are exchanged, and everyone showers akshata to bless the marriage.</p>
             </div>
           </div>
         </div>
@@ -1039,26 +1018,61 @@
     </div>
   </section>
 
+  <!-- WHAT TO WEAR -->
+  <section aria-labelledby="wear-h">
+    <div class="wrap">
+      <p class="eyebrow reveal">Dress code</p>
+      <h2 class="sec-title reveal" id="wear-h">What to wear</h2>
+      <p class="wear-lead reveal">Indian outfits are welcome but never expected. Festive or formal Western wear is perfectly lovely for every function.</p>
+      <div class="knowgrid">
+        <div class="card reveal wear-card">
+          <div class="wear-top"><span class="wear-when">Sun · 11 AM</span><span class="wear-vibe">Festive daytime</span></div>
+          <h3>Engagement <span class="mr">साखरपुडा</span></h3>
+          <p>A light saree, anarkali, or kurta set, or for men a kurta or a smart shirt and trousers.</p>
+        </div>
+        <div class="card reveal wear-card">
+          <div class="wear-top"><span class="wear-when">Sun · 3 PM</span><span class="wear-vibe">Yellow and carefree</span></div>
+          <h3>Haldi <span class="mr">हळद</span></h3>
+          <p>Yellow or any light colors in comfortable cotton. Turmeric stains, so leave anything precious at home.</p>
+        </div>
+        <div class="card reveal wear-card">
+          <div class="wear-top"><span class="wear-when">Sun · 7:30 PM</span><span class="wear-vibe">Evening glam</span></div>
+          <h3>Reception <span class="mr">स्वागत समारंभ</span></h3>
+          <p>A saree, lehenga, or elegant gown, or for men a bandhgala, Nehru jacket, sherwani, or a sharp suit.</p>
+        </div>
+        <div class="card reveal wear-card">
+          <div class="wear-top"><span class="wear-when">Mon · Morning</span><span class="wear-vibe">Traditional and colorful</span></div>
+          <h3>Wedding <span class="mr">विवाह</span></h3>
+          <p>Rich colors like red, maroon, green, or gold. A Paithani saree adds a lovely Maharashtrian touch. Please avoid all white or all black.</p>
+        </div>
+      </div>
+      <div class="wear-notes">
+        <div class="card reveal">
+          <h3>The weather</h3>
+          <p>Solapur in December is warm and sunny by day and pleasantly cool in the evening, so light fabrics work best, with a shawl or light layer for the night.</p>
+        </div>
+        <div class="card reveal">
+          <h3>If you would like to shop</h3>
+          <p>Lashkaraa and Kalki Fashion both ship to the US, and Bellevue and Redmond have several Indian boutiques. Orders from India can take two to four weeks, so mid-November is a safe time to order.</p>
+        </div>
+        <div class="card reveal wear-help">
+          <h3>We are happy to help</h3>
+          <p>Message us if you would like help choosing an outfit, or if you would like your saree draped on the day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- GOOD TO KNOW -->
   <section aria-labelledby="know-h">
     <div class="wrap">
       <p class="eyebrow reveal">Before you pack</p>
       <h2 class="sec-title reveal" id="know-h">Good to know</h2>
-      <div class="knowgrid">
+      <div class="knowgrid" style="grid-template-columns:1fr;">
         <div class="card reveal">
           <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="#E4711E" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
           <h3>Times may shift</h3>
           <p>The schedule is tentative and could move by a little. We'll keep this page updated as things firm up.</p>
-        </div>
-        <div class="card reveal">
-          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="#1B5E3F" stroke-width="1.8"><path d="M3 11l9-7 9 7"/><path d="M5 10v9h14v-9"/><path d="M10 19v-5h4v5"/></svg>
-          <h3>Your stay is sorted</h3>
-          <p>Rooms are on us for the wedding days. Coordinate arrival and check-in with the couple once you RSVP.</p>
-        </div>
-        <div class="card reveal">
-          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="1.8"><path d="M12 21s-7-4.5-7-10a7 7 0 0114 0c0 5.5-7 10-7 10z"/><circle cx="12" cy="11" r="2.4"/></svg>
-          <h3>Theme &amp; dress code</h3>
-          <p>Colors and outfit notes are coming soon. Check back here before you finalize your looks.</p>
         </div>
       </div>
     </div>
@@ -1069,7 +1083,7 @@
     <div class="wrap">
       <p class="eyebrow reveal">Reach us</p>
       <h2 class="sec-title reveal" id="c-h">Message the couple</h2>
-      <p class="contact-lead reveal">Anything at all — flights, rooms, dietary needs, or just to say you're coming — one of us will sort it out with you.</p>
+      <p class="contact-lead reveal">Anything at all, from travel plans to dietary needs or just to say you are coming, one of us will help you out.</p>
       <div class="ppl">
         <div class="person reveal">
           <div class="role">The Groom</div>
